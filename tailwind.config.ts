@@ -15,4 +15,11 @@ export default {
     },
   },
   plugins: [],
+  extend: {
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+      mono: ['Fira Code', 'monospace'],
+    },
+  },
+  
 } satisfies Config;
