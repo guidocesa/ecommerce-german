@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import NavbarButton from "./NavbarButton";
+import { useAuth } from "../firebase/authContext";
 
 export default function Navbar() {
   const [show, setShow] = useState(true);
   const [prevScrollY, setPrevScrollY] = useState(0);
+  const { user, logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,9 +78,17 @@ export default function Navbar() {
           </div>
         </div>
         {/* Derecha: Botones de Login y Registro, Favoritos y Carrito */}
-        <div className="flex items-center space-x-4">
-          <NavbarButton nameTag="Iniciar Sesión" path="/login" />
-          <NavbarButton nameTag="Registrarse" path="/register" />
+        { user ? ( 
+          <div className="flex items-center space-x-4">
+          <NavbarButton nameTag="Cerrar Sesion" path="/logout"/>
+          </div>
+        ) : (
+          <div className="flex items-center space-x-4">
+            <NavbarButton nameTag="Iniciar Sesión" path="/login" />
+            <NavbarButton nameTag="Registrarse" path="/register" />
+            </div>
+         )}
+          <div className="flex items-center space-x-4">
           {/*Botón de Favoritos */}
           <Link href="/favorites" className="text-white hover:text-gray-400">
           <svg

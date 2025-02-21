@@ -2,15 +2,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
-const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_AUTH_DOMAIN",
-  projectId: "TU_PROJECT_ID",
-  storageBucket: "TU_STORAGE_BUCKET",
-  messagingSenderId: "TU_MESSAGING_SENDER_ID",
-  appId: "TU_APP_ID"
-};
-
 // Inicializa Firebase solo si no está inicializado
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

@@ -8,36 +8,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 to-gray-800">
-      {/* Header */}
-      <header className="py-4">
-        <div className="container mx-auto flex justify-between items-center px-4">
-          <Link href="/" className="text-white text-2xl font-bold">
-            Mi E-commerce
-          </Link>
-
-          <nav className="flex items-center space-x-4">
-            <Link href="/products" className="text-white hover:underline">
-              Productos
-            </Link>
-
-            {user ? (
-              <div className="flex items-center space-x-2">
-                <span className="text-white">Bienvenido, {user.email}</span>
-                <button
-                  onClick={logout}
-                  className="bg-red-600 text-white px-3 py-1 rounded-md hover:bg-red-700 transition"
-                >
-                  Cerrar sesión
-                </button>
-              </div>
-            ) : (
-              <Link href="/login" className="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition">
-                Iniciar Sesión
-              </Link>
-            )}
-          </nav>
-        </div>
-      </header>
+      
 
       {/* Hero Section */}
       <main className="flex-1 flex items-center justify-center">

@@ -48,6 +48,12 @@ export default function ProductList() {
               <img src={product.image_url} alt={product.name} className="w-full h-auto" />
             )}
           </li>
+
+          /* Lo de arriba habria que reemplazarlo por algo asi
+            {products.map((product : Product) => (
+              <Product id={product.id} name={product.name} price={product.price} description={product.description} image_url={product.image_url}     />
+            ))}
+          */
         ))}
       </ul>
     </div>
