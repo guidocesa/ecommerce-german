@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useAuth } from "@/app/firebase/authContext";
+import ProductCarousel from "./components/ProductCarousel";
 
 export default function Home() {
   const { user, logout } = useAuth();
@@ -13,6 +14,7 @@ export default function Home() {
       {/* Hero Section */}
       <main className="flex-1 flex items-center justify-center">
         <div className="text-center px-4">
+          <ProductCarousel />
           <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
             Bienvenido a Mi E-commerce
           </h1>

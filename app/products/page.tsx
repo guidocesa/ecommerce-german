@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
+import Product from "../components/Product";
 
 interface Product {
   id: string;
@@ -40,14 +41,7 @@ export default function ProductList() {
       <h1 className="text-2xl font-bold mb-4">Productos</h1>
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {products.map((product) => (
-          <li key={product.id} className="border p-4 rounded">
-            <h2 className="text-xl font-bold">{product.name}</h2>
-            <p>{product.description}</p>
-            <p>${product.price}</p>
-            {product.image_url && (
-              <img src={product.image_url} alt={product.name} className="w-full h-auto" />
-            )}
-          </li>
+          <Product key={product.id} id={product.id} name={product.name} price={product.price} description={product.description} image_url={product.image_url} />
 
           /* Lo de arriba habria que reemplazarlo por algo asi
             {products.map((product : Product) => (

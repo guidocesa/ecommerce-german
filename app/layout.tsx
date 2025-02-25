@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AuthProvider>  {/* ✅ El AuthProvider envuelve toda la aplicación */}
           <Navbar />
-          <main>{children}</main>
+          <main className="mt-20" >{children}</main>
         </AuthProvider>
       </body>
     </html>
